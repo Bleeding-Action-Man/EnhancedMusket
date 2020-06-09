@@ -1,12 +1,14 @@
 //=============================================================================
-// Contact Vel-San for feedback, fixes or questions.
+// Base Mutator by Vel-San - Contact on Steam using the following Profile Link:
+// https://steamcommunity.com/id/Vel-San/
+// TODO: Added a config file to change FoV of the Zoom
 //=============================================================================
 
-class KFMusketZoom extends Mutator;
+class KFEnhancedMusket extends Mutator;
 
 function PostBeginPlay()
 {
-    Log("PostBeginPlay() Called in KFMusketZoom");
+    Log("PostBeginPlay() Called in KFEnhancedMusket");
 	SetTimer(1, true);
 }
 
@@ -18,11 +20,11 @@ function Timer()
 defaultproperties
 {
     // Mut Info
-    GroupName="KFEMusketZoom"
-    FriendlyName="KFMusketZoom"
-    Description="Simple Mutator that increases the zoom on the S.P Musket"
+    GroupName="KFEnhancedMusket"
+    FriendlyName="Enhanced Musket Mutator"
+    Description="An Enhanced version of the S. P. Musket;"
 
-    // Client-Side Vars
+    // Client-Side Vars - This 'WILL' Change before Public Release on SteamWorkshop
     RemoteRole=ROLE_SimulatedProxy
 	bAlwaysRelevant=true
 	bAddToServerPackages=true
