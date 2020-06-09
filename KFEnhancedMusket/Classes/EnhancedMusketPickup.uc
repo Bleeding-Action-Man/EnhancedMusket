@@ -1,13 +1,13 @@
 //=============================================================================
-// SPSniperZOOMPickup
-// everything written in this class is edited and should be different than
+// EnhancedMusketPickup
+// Everything written in this class is edited and should be different than
 // the original values
 // for more information, feedback, questions or requests please contact
 // Vel-San on Steam using the following Profile Link:
 // https://steamcommunity.com/id/Vel-San/
 //=============================================================================
 
-class SPSniperZOOMPickup extends SPSniperPickup;
+class EnhancedMusketPickup extends SPSniperPickup;
 
 defaultproperties
 {
@@ -21,7 +21,7 @@ defaultproperties
 	ItemName="Enhanced Single Piston"
 	ItemShortName="Enhanced S.P. Musket"
 	AmmoItemName="Enhanced S.P. Musket bullets"
-	InventoryType=Class'KFMusketZoom.SPSniperRifleZOOM'
+	InventoryType=Class'KFEnhancedMusket.EnhancedMusket'
 	PickupMessage="You got the Enhanced Single Piston Longmusket"
 
 }
