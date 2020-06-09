@@ -5,6 +5,7 @@
 // for more information, feedback, questions or requests please contact
 // Vel-San on Steam using the following Profile Link:
 // https://steamcommunity.com/id/Vel-San/
+// Overwritten --> Changes to base weapon
 //=============================================================================
 
 class EnhancedMusket extends SPSniperRifle;
@@ -14,7 +15,7 @@ class EnhancedMusket extends SPSniperRifle;
 //=============================================================================
 
 #exec OBJ LOAD FILE=..\textures\ScopeShaders.utx
-#exec OBJ LOAD FILE=..\textures\KF_Weapons5_Scopes_Trip_T.utx
+#exec OBJ LOAD FILE=..\textures\KF_Weapons5_Scopes_Trip_T.utx // Subject to change after I create a new Scope Texture - Vel-San
 
 var() Material ZoomMat;
 
@@ -35,12 +36,12 @@ var()		int			scopeYaw;				// Tweaks the yaw of the scope firing angle
 var()		int			scopePitchHigh;			// Tweaks the pitch of the scope firing angle high detail scope
 var()		int			scopeYawHigh;			// Tweaks the yaw of the scope firing angle high detail scope
 
-// 3d Scope vars
+// 3D Scope vars
 var   ScriptedTexture   ScopeScriptedTexture;   // Scripted texture for 3d scopes
 var	  Shader		    ScopeScriptedShader;   	// The shader that combines the scripted texture with the sight overlay
 var   Material          ScriptedTextureFallback;// The texture to render if the users system doesn't support shaders
 
-// new scope vars
+// New scope vars
 var     Combiner            ScriptedScopeCombiner;
 
 var     texture             TexturedScopeTexture;
@@ -51,14 +52,8 @@ var		string ZoomMatRef;
 var		string ScriptedTextureFallbackRef;
 
 //=============================================================================
-// Functions
+// Functions - Mostly for Enhanced Scope
 //=============================================================================
-
-//===========================================
-// Used for debugging the weapons and scopes- Ramm
-//===========================================
-
-// Commented out for the release build
 
 static function PreloadAssets(Inventory Inv, optional bool bSkipRefCount)
 {
@@ -67,10 +62,10 @@ static function PreloadAssets(Inventory Inv, optional bool bSkipRefCount)
 	default.ZoomMat = FinalBlend(DynamicLoadObject(default.ZoomMatRef, class'FinalBlend', true));
 	default.ScriptedTextureFallback = texture(DynamicLoadObject(default.ScriptedTextureFallbackRef, class'texture', true));
 
-	if ( SPSniperRifleZOOM(Inv) != none )
+	if ( EnhancedMusket(Inv) != none )
 	{
-		SPSniperRifleZOOM(Inv).ZoomMat = default.ZoomMat;
-		SPSniperRifleZOOM(Inv).ScriptedTextureFallback = default.ScriptedTextureFallback;
+		EnhancedMusket(Inv).ZoomMat = default.ZoomMat;
+		EnhancedMusket(Inv).ScriptedTextureFallback = default.ScriptedTextureFallback;
 	}
 }
 
@@ -124,13 +119,7 @@ simulated exec function TexSize(int i, int j)
 // Ramm 10/27/03
 simulated function bool ShouldDrawPortal()
 {
-//	local 	name	thisAnim;
-//	local	float 	animframe;
-//	local	float 	animrate;
-//
-//	GetAnimParams(0, thisAnim,animframe,animrate);
 
-//	if(bUsingSights && (IsInState('Idle') || IsInState('PostFiring')) && thisAnim != 'scope_shoot_last')
     if( bAimingRifle )
 		return true;
 	else
@@ -157,7 +146,6 @@ simulated function UpdateScopeMode()
 		{
 			scopePortalFOV = default.scopePortalFOV;
 			ZoomedDisplayFOV = CalcAspectRatioAdjustedFOV(default.ZoomedDisplayFOV);
-			//bPlayerFOVZooms = false;
 			if (bAimingRifle)
 			{
 				PlayerViewOffset = XoffsetScoped;
@@ -198,7 +186,6 @@ simulated function UpdateScopeMode()
 		{
 			scopePortalFOV = scopePortalFOVHigh;
 			ZoomedDisplayFOV = CalcAspectRatioAdjustedFOV(default.ZoomedDisplayFOVHigh);
-			//bPlayerFOVZooms = false;
 			if (bAimingRifle)
 			{
 				PlayerViewOffset = XoffsetHighDetail;
@@ -255,7 +242,7 @@ simulated event RenderTexture(ScriptedTexture Tex)
         Tex.DrawPortal(0,0,Tex.USize,Tex.VSize,Owner,(Instigator.Location + Instigator.EyePosition()), RollMod,  scopePortalFOV );
 }
 
-
+// OverWritten
 function float GetAIRating()
 {
 	local AIController B;
@@ -604,16 +591,16 @@ simulated function PreTravelCleanUp()
 
 defaultproperties
 {
-    // Mut Vars
+    // Important Scope Vars
     ZoomMatRef="KF_Weapons5_Scopes_Trip_T.M99.MilDotFinalBlend"
     ScriptedTextureFallbackRef="KF_Weapons_Trip_T.CBLens_cmb"
 
-    //** 3d Scope **//
-    scopePortalFOV=12 // 3 X
+    // 3D Scope Parameters (Enhanced Scope)
+    scopePortalFOV=12
     XoffsetScoped = (X=0.0,Y=0.0,Z=0.0)
     scopePitch= 0
     scopeYaw= 0
-    scopePortalFOVHigh=20 // 3.0x
+    scopePortalFOVHigh=20
     ZoomedDisplayFOVHigh=18
     XoffsetHighDetail = (X=0.0,Y=0.0,Z=0.0)
     scopePitchHigh= 0
@@ -623,64 +610,21 @@ defaultproperties
     bHasScope=True
 	bSniping = true
 
-	SkinRefs(1)="KF_IJC_Summer_Weapons.SniperRifle.Sniper_cmb"
-	// SkinRefs(2)="KF_IJC_Summer_Weapons.SniperRifle.sniperrifle_scope_shader"
-	SleeveNum=0
-
-	WeaponReloadAnim=Reload_spSinper
-	IdleAimAnim=Idle_Iron
-
-	CustomCrosshair=11
-	CustomCrossHairTextureName="Crosshairs.HUD.Crosshair_Cross5"
+	// Base Weapon Changes
+	Weight=5.000000
+	Description="An Enhanced version of the S. P. Musket with an Advanced Zoom, +5 Power, Cheaper (1000), Faster Reload, Faster Aim, +5 Range, Lighter (5 Weight Slots) and 15 Ammo capacity!"
+	PickupClass=Class'KFEnhancedMusket.EnhancedMusketPickup'
+	ItemName="Enhanced S.P. Musket"
 	MagCapacity=15
 	ReloadRate=2.0
-	ReloadAnim="Reload"
-	ReloadAnimRate=1.000000
 
-	Weight=5.000000
-	bModeZeroCanDryFire=True
-	FireModeClass(0)=Class'KFMod.SPSniperFire'
-	FireModeClass(1)=Class'KFMod.NoFire'
-	PutDownAnim="PutDown"
-	SelectSoundRef="KF_SP_LongmusketSnd.KFO_Sniper_Select"
-	SelectForce="SwitchToAssaultRifle"
-	bShowChargingBar=True
-	Description="An alternate version of the S. P. Musket with a advanced Zoom, slightly more powerful, cheaper, reloads faster, aims faster, +5 range, lighter and has more ammo capacity!"
-	EffectOffset=(X=100.000000,Y=25.000000,Z=-10.000000)
-	Priority=155
-	InventoryGroup=3
-	GroupOffset=18
-	PickupClass=Class'KFMusketZoom.SPSniperZOOMPickup'
-	PlayerViewOffset=(X=25.000000,Y=17.000000,Z=-8.000000)
-	//PlayerViewPivot=(Pitch=400)
-	BobDamping=6.000000
-	AttachmentClass=Class'KFMod.SPSniperAttachment'
-	IconCoords=(X1=245,Y1=39,X2=329,Y2=79)
-	ItemName="S.P. Musket ZOOM"
-	MeshRef="KF_IJC_Summer_Weps1.SniperRifle"
-	DrawScale=1.00000
-	TransientSoundVolume=1.250000
-	AmbientGlow=0
-
-	AIRating=0.55
-	CurrentRating=0.55
-
+	// Zoom & FoV Changes
 	DisplayFOV=65.000000
 	StandardDisplayFOV=65.0
 	PlayerIronSightFOV=25
 	ZoomTime=0.19
 	FastZoomOutTime=0.19
-	ZoomInRotation=(Pitch=-910,Yaw=0,Roll=2910)
 	bHasAimingMode=true
 	ZoomedDisplayFOV=60
-
-	HudImageRef="KF_IJC_HUD.WeaponSelect.Sniper_unselected"
-	SelectedHudImageRef="KF_IJC_HUD.WeaponSelect.Sniper"
-	TraderInfoTexture=texture'KF_IJC_HUD.Trader_Weapon_Icons.Trader_Sniper'
-
-
-	// Achievement Helpers
-	bIsTier2Weapon=true
-	AppID=210943
 
 }

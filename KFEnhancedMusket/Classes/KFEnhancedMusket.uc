@@ -1,7 +1,7 @@
 //=============================================================================
 // Base Mutator by Vel-San - Contact on Steam using the following Profile Link:
 // https://steamcommunity.com/id/Vel-San/
-// TODO: Added a config file to change FoV of the Zoom
+// TODO: Add a config support to change FoV of the Zoom
 //=============================================================================
 
 class KFEnhancedMusket extends Mutator;
