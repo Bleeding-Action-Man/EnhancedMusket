@@ -1,5 +1,10 @@
 //=============================================================================
 // SPSniperZOOMPickup
+// everything written in this class is edited and should be different than
+// the original values
+// for more information, feedback, questions or requests please contact
+// Vel-San on Steam using the following Profile Link:
+// https://steamcommunity.com/id/Vel-San/
 //=============================================================================
 
 class SPSniperZOOMPickup extends SPSniperPickup;
@@ -7,17 +12,16 @@ class SPSniperZOOMPickup extends SPSniperPickup;
 defaultproperties
 {
 	Weight=5.000000
-	cost=850
-	AmmoCost=20
+	cost=1000
 	BuyClipSize=15
 	PowerValue=65
 	SpeedValue=10
 	RangeValue=100
-	Description="An alternate version of the S. P. Musket with a advanced Zoom, slightly more powerful, cheaper, reloads faster, aims faster, +5 range, lighter and has more ammo capacity!"
-	ItemName="Single Piston ZOOM"
-	ItemShortName="S.P. Musket ZOOM"
-	AmmoItemName="S.P. Musket bullets"
+	Description="An Enhanced version of the S. P. Musket with an Advanced Zoom, +5 Power, Cheaper (1000), Faster Reload, Faster Aim, +5 Range, Lighter (5 Weight Slots) and 15 Ammo capacity!"
+	ItemName="Enhanced Single Piston"
+	ItemShortName="Enhanced S.P. Musket"
+	AmmoItemName="Enhanced S.P. Musket bullets"
 	InventoryType=Class'KFMusketZoom.SPSniperRifleZOOM'
-	PickupMessage="You got the Single Piston ZOOM Longmusket"
+	PickupMessage="You got the Enhanced Single Piston Longmusket"
 
 }
