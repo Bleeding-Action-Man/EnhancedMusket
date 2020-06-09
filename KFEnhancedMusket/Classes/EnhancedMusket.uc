@@ -17,11 +17,11 @@ class EnhancedMusket extends SPSniperRifle;
 #exec OBJ LOAD FILE=..\textures\ScopeShaders.utx
 #exec OBJ LOAD FILE=..\textures\KF_Weapons5_Scopes_Trip_T.utx // Subject to change after I create a new Scope Texture - Vel-San
 
-var() Material ZoomMat;
-
 //=============================================================================
 // Variables
 //=============================================================================
+
+var() Material ZoomMat;
 
 var()		int			lenseMaterialID;		// used since material id's seem to change alot
 
