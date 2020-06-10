@@ -14,10 +14,10 @@ defaultproperties
 	Weight=5.000000
 	cost=1000
 	BuyClipSize=15
-	PowerValue=65
+	PowerValue=63
 	SpeedValue=10
 	RangeValue=100
-	Description="An Enhanced version of the S. P. Musket with an Advanced Zoom, +5 Power, Cheaper (1000), Faster Reload, Faster Aim, +5 Range, Lighter (5 Weight Slots) and 15 Ammo capacity!"
+	Description="An Enhanced version of the S. P. Musket with an Advanced Zoom, +5% Power, Cheaper (1000 Dosh), Slightly Faster Reload, Slightly Faster Aim, Better Range, Lighter (5 Weight Slots) and 15 Ammo capacity!"
 	ItemName="Enhanced Single Piston"
 	ItemShortName="Enhanced S.P. Musket"
 	AmmoItemName="Enhanced S.P. Musket bullets"

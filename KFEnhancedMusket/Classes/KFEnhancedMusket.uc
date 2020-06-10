@@ -6,15 +6,11 @@
 
 class KFEnhancedMusket extends Mutator;
 
-function PostBeginPlay()
+function ModifyPlayer(Pawn Player)
 {
-    Log("PostBeginPlay() Called in KFEnhancedMusket");
-	SetTimer(1, true);
-}
-
-function Timer()
-{
-
+     Super.ModifyPlayer(Player);
+     Log("KFEnhancedMusket Enabled - Weapon will be given on StartUp!");
+     Player.GiveWeapon("KFEnhancedMusket.EnhancedMusket");
 }
 
 defaultproperties
@@ -22,10 +18,8 @@ defaultproperties
     // Mut Info
     GroupName="KFEnhancedMusket"
     FriendlyName="Enhanced Musket Mutator"
-    Description="An Enhanced version of the S. P. Musket;"
+    Description="An Enhanced version of the S. P. Musket; If enabled, you will spawn with the weapon automatically! - By Vel-San"
 
-    // Client-Side Vars - This 'WILL' Change before Public Release on SteamWorkshop
-    RemoteRole=ROLE_SimulatedProxy
-	bAlwaysRelevant=true
+    // Mandatory Vars
 	bAddToServerPackages=true
 }
