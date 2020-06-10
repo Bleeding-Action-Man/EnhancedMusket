@@ -619,12 +619,11 @@ defaultproperties
 	ReloadRate=2.0
 
 	// Zoom & FoV Changes
-	DisplayFOV=65.000000
-	StandardDisplayFOV=65.0
-	PlayerIronSightFOV=25
-	ZoomTime=0.19
+	DisplayFOV=60
+	StandardDisplayFOV=60.0
+	PlayerIronSightFOV=20
+	ZoomTime=0.2
 	FastZoomOutTime=0.19
-	bHasAimingMode=true
-	ZoomedDisplayFOV=60
+	ZoomedDisplayFOV=20
 
 }
