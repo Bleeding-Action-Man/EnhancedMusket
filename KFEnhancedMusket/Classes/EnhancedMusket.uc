@@ -15,7 +15,7 @@ class EnhancedMusket extends SPSniperRifle;
 //=============================================================================
 
 #exec OBJ LOAD FILE=..\textures\ScopeShaders.utx
-#exec OBJ LOAD FILE=..\textures\KF_Weapons5_Scopes_Trip_T.utx // Subject to change after I create a new Scope Texture - Vel-San
+#exec OBJ LOAD FILE=..\textures\KF_Enhanced_Musket_Scope.utx
 
 //=============================================================================
 // Variables
@@ -164,7 +164,7 @@ simulated function UpdateScopeMode()
 			{
 				// Construct the Combiner
 				ScriptedScopeCombiner = Combiner(Level.ObjectPool.AllocateObject(class'Combiner'));
-	            ScriptedScopeCombiner.Material1 = Texture'KF_Weapons5_Scopes_Trip_T.Scope.MilDot';
+	            ScriptedScopeCombiner.Material1 = Texture'KF_Enhanced_Musket_Scope.Scope.Enhanced_Scope';
 	            ScriptedScopeCombiner.FallbackMaterial = Shader'ScopeShaders.Zoomblur.LensShader';
 	            ScriptedScopeCombiner.CombineOperation = CO_Multiply;
 	            ScriptedScopeCombiner.AlphaOperation = AO_Use_Mask;
@@ -203,7 +203,7 @@ simulated function UpdateScopeMode()
 			{
 				// Construct the Combiner
 				ScriptedScopeCombiner = Combiner(Level.ObjectPool.AllocateObject(class'Combiner'));
-	            ScriptedScopeCombiner.Material1 = Texture'KF_Weapons5_Scopes_Trip_T.Scope.MilDot';
+	            ScriptedScopeCombiner.Material1 = Texture'KF_Enhanced_Musket_Scope.Scope.Enhanced_Scope';
 	            ScriptedScopeCombiner.FallbackMaterial = Shader'ScopeShaders.Zoomblur.LensShader';
 	            ScriptedScopeCombiner.CombineOperation = CO_Multiply;
 	            ScriptedScopeCombiner.AlphaOperation = AO_Use_Mask;
@@ -592,7 +592,7 @@ simulated function PreTravelCleanUp()
 defaultproperties
 {
     // Important Scope Vars
-    ZoomMatRef="KF_Weapons5_Scopes_Trip_T.M99.MilDotFinalBlend"
+    ZoomMatRef="KF_Enhanced_Musket_Scope.Scope.EnhancedScopeFinalBlend"
     ScriptedTextureFallbackRef="KF_Weapons_Trip_T.CBLens_cmb"
 
     // 3D Scope Parameters (Enhanced Scope)
@@ -616,7 +616,7 @@ defaultproperties
 	PickupClass=Class'KFEnhancedMusket.EnhancedMusketPickup'
 	ItemName="Enhanced S.P. Musket"
 	MagCapacity=15
-	ReloadRate=2.0
+	ReloadRate=2.5
 
 	// Zoom & FoV Changes
 	DisplayFOV=60
