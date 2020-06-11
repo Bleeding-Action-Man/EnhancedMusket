@@ -1,5 +1,6 @@
 - [KFMusketZoom](#kfmusketzoom)
   - [Enhancments](#enhancments)
+  - [Usage](#usage)
   - [Links](#links)
 
 # KFMusketZoom
@@ -17,6 +18,12 @@ Won't put in detailes, but below you can see the list of things i've retouched i
 - Slight increase in weapon ammo capacity
 - Slight decrease in cost
 - Slight decrease in weight
+
+## Usage
+
+- Download the release from github (Or subscribe via the WorkShop)
+- Enable the ShopMut (Or Base Mut) in-game
+- Done!
 
 ## Links
 
