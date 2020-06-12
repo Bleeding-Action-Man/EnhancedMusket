@@ -1,0 +1,55 @@
+This Mutator will 'Replace' your current S.P. Musket with an enhanced version, featuring:
+
+- New Enhanced scope/zoom that works like the M99, with new texture
+- Slight increase to the base damage
+- Slight increase in reload speed
+- Slight increase in aim speed
+- Slight increase in weapon ammo capacity
+- Slight decrease in cost
+- Slight decrease in weight
+
+[b][u]Number Of Files[/u][/b]
+
+3
+
+[b][u]File Names[/u][/b]
+
+\System\KFEnhancedMusket.u
+\System\KFEnhancedMusket.ucl
+
+\Textures\KF_Enhanced_Musket_Scope.utx
+
+[b][u]Usage[/u][/b]
+
+1- Subscribe or download manually (recommended)
+2- Launch the game and wait to see 'Completed'
+3- Restart the game and you can see the mutators in your list
+
+[b][u]Mutators[/u][/b]
+
+There are 2 mutators. One will [b]spawn[/b] you with the weapon, and the other will [b]add it to the trader[/b] where you can buy it normally
+
+[b][u]Class Names[/u][/b]
+
+- Trader Shop Mut: KFEnhancedMusket.EnhancedMusketShopMut
+
+- Spawn Mut: KFEnhancedMusket.KFEnhancedMusket
+
+- ServerPerks Pickup Name: KFEnhancedMusket.EnhancedMusketPickup
+
+[b][u]Known Bugs (Will fix in later releases)[/u][/b]
+
+If you are using '[i]Low[/i]' or '[i]High[/i]' textures for the Scope settings, the scope will not work properly.
+
+To fix this simply go to:
+
+- Settings
+- Check Advanced
+- Switch scope settings to 'Textured'
+- Done!
+
+[b][u]Manual Download Links (Recommended)[/u][/b]
+
+You can find it under 'Not Whitelisted' folder named KFEnhancedMusket
+
+MEGA Link: https://mega DOT nz/folder/YDoEmKiC#s6FGAtgh40-TvB4bHsLaMQ
