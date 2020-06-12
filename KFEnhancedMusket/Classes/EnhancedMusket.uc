@@ -617,6 +617,8 @@ defaultproperties
 	ItemName="Enhanced S.P. Musket"
 	MagCapacity=15
 	ReloadRate=2.5
+	// Require no DLC
+	AppID=0
 
 	// Zoom & FoV Changes
 	DisplayFOV=60
