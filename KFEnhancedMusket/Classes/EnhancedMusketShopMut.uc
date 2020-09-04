@@ -53,7 +53,7 @@ defaultproperties
 
     // Mut Vars
     GroupName="KFEnhancedMusketShopMut"
-    FriendlyName="Enhanced Musket Shop Mutator"
+    FriendlyName="Enhanced Musket Shop Mutator - v2.0"
     Description="This Mutator 'Replaces' the S.P Musket with an Enhanced Version in the trader shop! - By Vel-San"
 
 }

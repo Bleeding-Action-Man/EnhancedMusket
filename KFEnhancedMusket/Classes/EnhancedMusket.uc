@@ -611,12 +611,9 @@ defaultproperties
 	bSniping = true
 
 	// Base Weapon Changes
-	Weight=5.000000
-	Description="An Enhanced version of the S. P. Musket with an Advanced Zoom, +5% Power, Cheaper (1000 Dosh), Slightly Faster Reload, Slightly Faster Aim, Better Range, Lighter (5 Weight Slots) and 15 Ammo capacity!"
+	Description="An Enhanced version of the S. P. Musket with a Scope for the real Head Poppers!"
 	PickupClass=Class'KFEnhancedMusket.EnhancedMusketPickup'
 	ItemName="Enhanced S.P. Musket"
-	MagCapacity=15
-	ReloadRate=2.5
 	// Require no DLC
 	AppID=0
 
