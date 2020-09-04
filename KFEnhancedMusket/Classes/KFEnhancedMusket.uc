@@ -17,7 +17,7 @@ defaultproperties
 {
     // Mut Info
     GroupName="KFEnhancedMusket"
-    FriendlyName="Enhanced Musket Mutator"
+    FriendlyName="Enhanced Musket Mutator - v2.0"
     Description="An Enhanced version of the S. P. Musket; If enabled, you will spawn with the weapon automatically! - By Vel-San"
 
     // Mandatory Vars
